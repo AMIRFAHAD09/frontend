@@ -4,12 +4,13 @@ import { createContext, useContext, useEffect, useState } from "react";
 export const UserContext = createContext();
 
 export const AuthProvider =({children})=>{
+  const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
     const[token,setToken]=useState(() => localStorage.getItem("token") || "");
     const[allUser,setAllUser]=useState([])
     const[getUser,setUser]=useState();
     const[loading,setLoading]=useState(true);
 
-    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    
     const storeToken = (serverToken)=>{
         localStorage.setItem("token",serverToken)
         setToken(serverToken)
