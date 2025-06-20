@@ -507,7 +507,7 @@ useEffect(() => {
                 onClick={() => handleSelectUser(fullUser)}
                 className={`relative flex items-center p-3 rounded-lg mb-3 cursor-pointer hover:bg-gray-600 ${selectedChat?._id === fullUser._id ? "bg-gray-600" : ""
                   }`}>
-                <img src={fullUser.pic} alt="" className="w-10 h-10 rounded-full object-cover mr-3" />
+                <img src={`${API_BASE}${fullUser.pic}`} alt="" className="w-10 h-10 rounded-full object-cover mr-3" />
                 <p className="font-medium text-white">{curUser.username}</p>
 
                 {/* notificatio */}
